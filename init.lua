@@ -48,6 +48,8 @@ vim.opt.updatetime = 250
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 
+--
+--
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -67,9 +69,16 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- [[ Basic Keymaps ]]
-vim.keymap.set('n', 'dw', 'vb_d', { silent = true, noremap = true, desc = 'Delete [W]ord Backwards' })
+-- [[Custom Keymaps]]
 vim.keymap.set('n', '<C-a>', 'gg<S-v>G', { silent = true, noremap = true, desc = 'Select [A]ll' })
+-- Record macro
+vim.keymap.set('n', '<C-m>', 'qm', { silent = true, noremap = true, desc = '[M]acro' })
+-- Play macro
+vim.keymap.set('n', '<leader>p', '@m', { silent = true, noremap = true, desc = '[P]lace Macro' })
+
+-- Close current buffer
+vim.keymap.set('n', '<leader>q', ':bd<CR>', { silent = true, noremap = true, desc = '[Q]uit Buffer' })
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -77,8 +86,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>ed', vim.diagnostic.open_float, { desc = 'Show [E]rror [D]iagnostic  messages' })
+vim.keymap.set('n', '<leader>ef', vim.diagnostic.setloclist, { desc = 'Open diagnostic [E]rror Quick[F]ix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -623,6 +632,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          -- { name = 'supermaven' },
         },
       }
     end,
