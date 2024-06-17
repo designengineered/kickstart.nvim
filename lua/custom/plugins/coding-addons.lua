@@ -28,4 +28,7 @@ return {
       }
     end,
   },
+  {
+    'virchau13/tree-sitter-astro',
+  },
 }
