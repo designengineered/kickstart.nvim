@@ -419,7 +419,13 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        astro = {},
+        astro = {
+          cmd = { 'astro-ls', '--stdio' },
+          filetypes = { 'astro' },
+          init_options = {
+            typescript = {},
+          },
+        },
         clangd = {},
         bashls = {},
         gopls = {},
@@ -470,7 +476,8 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        'stylua',
+        'astro', -- Used to format Lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -700,7 +707,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'go', 'html', 'javascript', 'lua', 'luadoc', 'markdown', 'python', ' vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'astro', 'c', 'css', 'go', 'html', 'javascript', 'lua', 'luadoc', 'markdown', 'python', 'typescript', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
