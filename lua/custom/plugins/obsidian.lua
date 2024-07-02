@@ -25,6 +25,7 @@ return {
           path = '~/Documents/cello-main/',
         },
       },
+      new_notes_location = 'current_dir',
       templates = {
         folder = '~/Documents/cello-main/Templates/',
         date_format = '%Y-%m-%d-%a',
@@ -73,8 +74,6 @@ return {
       -- Where to put new notes. Valid options are
       -- * "current_dir" - put new notes in same directory as the current buffer.
       --  * "notes_subdir" - put new notes in the default notes subdirectory.
-      new_notes_location = 'current_dir',
-      disable_frontmatter = true,
 
       mappings = {
         ['gf'] = {
@@ -102,6 +101,7 @@ return {
       vim.keymap.set('n', '<leader>zy', vim.cmd.ObsidianYesterday, { desc = 'Creates new note for yesterday or travel to yesterday' }),
       vim.keymap.set('n', '<leader>zm', vim.cmd.ObsidianTomorrow, { desc = 'Creates new note for tomorrow or travel to tomorrow' }),
       vim.keymap.set('v', '<leader>zl', vim.cmd.ObsidianLink, { desc = 'Links Selected text to a note' }),
+      vim.keymap.set('n', '<leader>zb', vim.cmd.ObsidianBacklinks, { desc = 'Show backlinks for current note' }),
       -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
       completion = {
         -- Set to false to disable completion.

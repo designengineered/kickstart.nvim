@@ -70,14 +70,11 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- [[Custom Keymaps]]
-vim.keymap.set('n', '<leader>v', 'gg<S-v>G', { silent = true, noremap = true, desc = 'Select [A]ll' })
--- Record macro
-vim.keymap.set('n', '<C-m>', 'qm', { silent = true, noremap = true, desc = '[M]acro' })
--- Play macro
-vim.keymap.set('n', '<leader>p', '@m', { silent = true, noremap = true, desc = '[P]lace Macro' })
+vim.keymap.set('n', '<leader>q', 'q', { noremap = true, desc = 'record macro' })
+vim.keymap.set('n', '<leader>l', 'gg<S-v>G', { silent = true, noremap = true, desc = 'Select [A]ll' })
 
 -- Close current buffer
-vim.keymap.set('n', '<leader>q', ':bd<CR>', { silent = true, noremap = true, desc = '[Q]uit Buffer' })
+vim.keymap.set('n', '<leader>x', ':bd<CR>', { silent = true, noremap = true, desc = '[Q]uit Buffer' })
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -687,17 +684,17 @@ require('lazy').setup({
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
-      local statusline = require 'mini.statusline'
+      -- local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      -- statusline.setup { use_icons = vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
       -- cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
+      -- statusline.section_location = function()
+      --   return '%2l:%-2v'
+      -- end
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
