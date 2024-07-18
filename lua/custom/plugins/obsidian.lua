@@ -34,6 +34,9 @@ return {
           today = function()
             return os.date '%Y-%m-%d'
           end,
+          tomorrow = function()
+            return os.date('%Y-%m-%d', os.time() + 86400)
+          end,
           yesterday = function()
             return os.date('%Y-%m-%d', os.time() - 86400)
           end,
