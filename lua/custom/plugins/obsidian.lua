@@ -25,7 +25,7 @@ return {
           path = '~/Documents/cello-main/',
         },
       },
-      new_notes_location = 'current_dir',
+      new_notes_location = '~/Documents/cello-main/Inbox/',
       templates = {
         folder = '~/Documents/cello-main/Templates/',
         date_format = '%Y-%m-%d-%a',
