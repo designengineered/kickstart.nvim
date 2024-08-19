@@ -73,8 +73,11 @@ vim.opt.scrolloff = 10
 vim.keymap.set('n', '<leader>q', 'q', { noremap = true, desc = 'record macro' })
 vim.keymap.set('n', '<leader>l', 'gg<S-v>G', { silent = true, noremap = true, desc = 'Select [A]ll' })
 
+-- Save Current Buffer
+vim.keymap.set('n', 'WW', ':w<CR>', { noremap = true, silent = true, desc = '[W]rite buffer' })
 -- Close current buffer
 vim.keymap.set('n', '<leader>x', ':bd<CR>', { silent = true, noremap = true, desc = '[Q]uit Buffer' })
+vim.keymap.set('n', '<leader>zz', ':q!<CR>', { silent = true, noremap = true, desc = 'Quit without saving' })
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
