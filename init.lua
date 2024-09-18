@@ -494,7 +494,7 @@ require('lazy').setup({
         tailwindcss = {},
         svelte = {},
         sqls = {},
-        ts_ls - {},
+        ts_ls = {},
         yamlls = {},
         lua_ls = {
           -- cmd = {...},
