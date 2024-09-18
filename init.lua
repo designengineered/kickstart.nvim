@@ -481,7 +481,7 @@ require('lazy').setup({
         cssls = {},
         cssmodules_ls = {},
         eslint = {},
-        gopls = {}
+        gopls = {},
         golangci_lint_ls = {},
         html = {},
         pyright = {},
@@ -494,7 +494,7 @@ require('lazy').setup({
         tailwindcss = {},
         svelte = {},
         sqls = {},
-        ts_ls - {
+        ts_ls - {},
         yamlls = {},
         lua_ls = {
           -- cmd = {...},
