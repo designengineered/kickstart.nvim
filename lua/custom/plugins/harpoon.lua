@@ -33,7 +33,7 @@ return {
     vim.keymap.set('n', '<C-h>', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = 'open deletable UI' })
-    vim.keymap.set('n', '<leader>a', function()
+    vim.keymap.set('n', '<leader>af', function()
       harpoon:list():add()
     end, { desc = 'Add a file to harpoon' })
     -- Toggle previous & next buffers stored within Harpoon list
