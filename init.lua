@@ -106,6 +106,17 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- Disable default J (join lines) and K (help lookup)
+vim.keymap.set('n', 'J', '<Nop>')
+vim.keymap.set('n', 'K', '<Nop>')
+vim.keymap.set({ 'n', 'v', 'o', 'x' }, 's', '<Nop>')
+vim.keymap.set({ 'n', 'v', 'o', 'x' }, 'S', '<Nop>') -- also disable uppercase S
+vim.keymap.set({ 'n', 'v' }, '<BS>', '<Nop>') -- Disable backspace in normal and visual modes
+--
+-- Map them to scroll instead
+vim.keymap.set('n', 'J', '<C-d>') -- J to scroll down half page
+vim.keymap.set('n', 'K', '<C-u>') -- K to scroll up half page
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
