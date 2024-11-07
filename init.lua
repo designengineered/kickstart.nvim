@@ -77,10 +77,11 @@ vim.keymap.set('n', '<leader>q', 'q', { noremap = true, desc = 'record macro' })
 vim.keymap.set('n', '<leader>l', 'gg<S-v>G', { silent = true, noremap = true, desc = 'Select [A]ll' })
 
 -- Save Current Buffer
-vim.keymap.set('n', 'WW', ':w<CR>', { noremap = true, silent = true, desc = '[W]rite buffer' })
+vim.keymap.set('n', 'SS', ':w<CR>', { noremap = true, silent = true, desc = '[W]rite buffer' })
 -- Close current buffer
 vim.keymap.set('n', '<leader>x', ':bd<CR>', { silent = true, noremap = true, desc = '[Q]uit Buffer' })
-vim.keymap.set('n', '<leader>zz', ':q!<CR>', { silent = true, noremap = true, desc = 'Quit without saving' })
+vim.keymap.set('n', '<leader>m', ':wq<CR>', { silent = true, noremap = true, desc = '[m] quit' })
+vim.keymap.set('n', '<leader>j', ':q!<CR>', { silent = true, noremap = true, desc = '[j] Quit without saving' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -101,14 +102,16 @@ vim.keymap.set('n', '<leader>ef', vim.diagnostic.setloclist, { desc = 'Open diag
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+-- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+-- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+-- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+-- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Disable default J (join lines) and K (help lookup)
 vim.keymap.set('n', 'J', '<Nop>')
 vim.keymap.set('n', 'K', '<Nop>')
+vim.keymap.set({ 'n', 'v', 'o', 'x' }, 'n', '<Nop>')
+vim.keymap.set({ 'n', 'v', 'o', 'x' }, 'N', '<Nop>')
 vim.keymap.set({ 'n', 'v', 'o', 'x' }, 's', '<Nop>')
 vim.keymap.set({ 'n', 'v', 'o', 'x' }, 'S', '<Nop>') -- also disable uppercase S
 vim.keymap.set({ 'n', 'v' }, '<BS>', '<Nop>') -- Disable backspace in normal and visual modes
