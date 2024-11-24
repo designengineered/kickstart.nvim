@@ -27,13 +27,13 @@ return {
     end
 
     -- Setting a keymap to use the toggle_telescope function
-    vim.keymap.set('n', '<leader>n', function()
+    vim.keymap.set('n', '<leader>ne', function()
       toggle_telescope(harpoon:list())
     end, { desc = 'Open harpoon window' })
     vim.keymap.set('n', '<C-h>', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = 'open deletable UI' })
-    vim.keymap.set('n', '<leader>as', function()
+    vim.keymap.set('n', '<leader>nn', function()
       harpoon:list():add()
     end, { desc = 'Add a file to harpoon' })
     -- Toggle previous & next buffers stored within Harpoon list
