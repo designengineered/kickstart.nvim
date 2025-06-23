@@ -37,11 +37,13 @@ return {
       harpoon:list():add()
     end, { desc = 'Add a file to harpoon' })
     -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set('n', '<C-S-P>', function()
+    vim.keymap.set('n', '<C-S-p>', function()
       harpoon:list():prev()
     end, { desc = 'prev harpoon buffer' })
     vim.keymap.set('n', '<C-S-N>', function()
       harpoon:list():next()
     end, { desc = 'next harpoon buffer' })
+    -- Clear the Ctrl+Backspace mapping
+    vim.keymap.set('n', '<C-BS>', '<Nop>', { desc = 'disabled harpoon mapping' })
   end,
 }
